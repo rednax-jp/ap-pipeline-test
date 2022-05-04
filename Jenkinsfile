@@ -1,17 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+    stage('check-version') {
       steps {
         echo "testing"
         sh "docker version"
       }
     }
-    stage('test') {
-          steps {
-            sh "echo testing"
-            sh "docker version"
-          }
-        }
+  stage('test-kubectl') {
+    steps {
+        sh "kubectl version"
+      }
+    }
   }
 }
