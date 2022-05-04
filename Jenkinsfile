@@ -9,7 +9,9 @@ pipeline {
     }
   stage('test-kubectl') {
     steps {
+        echo 'checking kubernetes and helm'
         sh "kubectl version"
+        sh "helm version"
       }
     }
   }
