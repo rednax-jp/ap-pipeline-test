@@ -9,9 +9,9 @@ pipeline {
     }
   stage('test-kubectl') {
     steps {
-        echo 'checking kubernetes and helm'
-        sh "kubectl version"
-        sh "helm version"
+        echo 'checking host details'
+        sh "hostname"
+        sh "ls -ltr /"
       }
     }
   }
