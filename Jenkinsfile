@@ -13,7 +13,7 @@ pipeline {
   stage('test-kubectl') {
     steps {
         echo 'checking kubernetes and helm'
-        sh "which kubeclt"
+        sh "which kubectl"
         sh "which helm"
       }
     }
