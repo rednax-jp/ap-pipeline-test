@@ -6,7 +6,7 @@ pipeline {
         echo "testing"
         sh "uname -a"
         sh 'uname -v'
-        sh "uname --h"
+        sh "uname --help"
         sh 'which docker'
       }
     }
