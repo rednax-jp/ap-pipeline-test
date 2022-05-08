@@ -1,13 +1,18 @@
 pipeline {
-    agent {
-        docker { image 'node:16.13.1-alpine' }
+  agent any
+  stages {
+    stage('check-version') {
+      steps {
+        echo "testing"
+        sh "docker version"
+      }
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-                sh 'ls -ltr'
-            }
-        }
+  stage('test-kubectl') {
+    steps {
+        echo 'checking kubernetes and helm'
+        sh "kubectl version"
+        sh "helm version"
+      }
     }
+  }
 }
