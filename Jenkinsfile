@@ -4,14 +4,17 @@ pipeline {
     stage('check-version') {
       steps {
         echo "testing"
-        sh "docker version"
+        sh "uname -a"
+        sh 'uname -v'
+        sh "uname --h"
+        sh 'which docker'
       }
     }
   stage('test-kubectl') {
     steps {
         echo 'checking kubernetes and helm'
-        sh "kubectl version"
-        sh "helm version"
+        sh "which kubeclt"
+        sh "which helm"
       }
     }
   }
